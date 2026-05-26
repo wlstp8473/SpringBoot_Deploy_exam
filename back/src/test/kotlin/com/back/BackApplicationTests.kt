@@ -19,8 +19,8 @@ class BackApplicationTests {
 	@Autowired
 	private lateinit var mvc: MockMvc
 
-	@Test
 	@DisplayName("GET /buckets")
+	@Test
 	fun t1() {
 		val resultActions = mvc
 			.perform(
@@ -33,4 +33,5 @@ class BackApplicationTests {
 				status().isOk()
 			}
 	}
+
 }
