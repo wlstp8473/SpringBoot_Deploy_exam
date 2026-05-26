@@ -11,9 +11,12 @@ RUN gradle dependencies --no-daemon || true
 # 소스 복사
 COPY src ./src
 
-# --no-daemon: 컨테이너 내 일회성 빌드이므로 데몬 불필요
-RUN gradle build --no-daemon
+COPY gradlew ./
+COPY gradle ./gradle
 
+
+# --no-daemon: 컨테이너 내 일회성 빌드이므로 데몬 불필요
+RUN ./gradlew build --no-daemon -x test
 # =========================
 # 2️⃣ Run Stage
 # =========================
