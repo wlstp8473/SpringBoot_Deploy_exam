@@ -16,6 +16,7 @@ COPY gradle ./gradle
 
 
 # --no-daemon: 컨테이너 내 일회성 빌드이므로 데몬 불필요
+RUN chmod +x ./gradlew
 RUN ./gradlew build --no-daemon -x test
 # =========================
 # 2️⃣ Run Stage
